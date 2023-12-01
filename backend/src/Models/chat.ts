@@ -1,10 +1,11 @@
-import mongoose from "../app";
+// 채팅 스키마 만들기 
+const chatMongoose = require("mongoose");
 
-const chatSchema = new mongoose.Schema({
+const chatSchema = new chatMongoose.Schema({
   chat: String,
   user: {
     id: {
-      type: mongoose.Schema.ObjectId,
+      type: chatMongoose.Schema.ObjectId,
       ref: "User",
     },
     name: String,
@@ -14,4 +15,4 @@ const chatSchema = new mongoose.Schema({
     timestamps: true
 });
 
-module.exports = mongoose.model("Chat", chatSchema);
+module.exports = chatMongoose.model("Chat", chatSchema);

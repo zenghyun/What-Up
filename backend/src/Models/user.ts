@@ -1,7 +1,7 @@
 // 유저 스키마 만들기 
-import mongoose from "../app";
+const userMongoose = require("mongoose");
 
-const userSchema = new mongoose.Schema({
+const userSchema = new userMongoose.Schema({
     name: {
         type: String,
         required: [true, "User must type name"],
@@ -16,4 +16,4 @@ const userSchema = new mongoose.Schema({
     },
 });
 
-module.exports = mongoose.model("User", userSchema);
+module.exports = userMongoose.model("User", userSchema);
