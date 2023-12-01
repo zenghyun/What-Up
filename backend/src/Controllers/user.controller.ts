@@ -1,7 +1,7 @@
 const User = require("../Models/user");
 
 const userController = {
-  saveUser: async (userName: String, sid: String) => {
+  saveUser: async (userName: string, sid: string) => {
     // 이미 존재하는 유저인지 확인 후, 없다면 새로 유저정보를 만듬
     let user = await User.findOne({ name: userName });
     if (!user) {
@@ -18,7 +18,7 @@ const userController = {
     await user.save();
     return user;
   },
-  checkUser: async (sid: String) => {
+  checkUser: async (sid: string) => {
     const user = await User.findOne({ token: sid });
     if (!user) throw new Error("User not found");
     return user;
