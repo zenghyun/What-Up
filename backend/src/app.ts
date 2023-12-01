@@ -1,5 +1,4 @@
 // 데이터베이스 세팅
-
 const express = require("express");
 const mongoose = require("mongoose");
 require("dotenv").config();
@@ -13,5 +12,3 @@ mongoose.connect(process.env.DB).then(() => {
 });
 
 module.exports = app;
-
-export default mongoose;
