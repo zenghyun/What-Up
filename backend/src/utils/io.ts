@@ -1,9 +1,9 @@
-import { ioResponse, SystemMessage, LoginResponse } from "../types/io.type";
+import { IoResponse, SystemMessage, LoginResponse } from "../types/io.type";
 
 const getUserController = require("../Controllers/user.controller");
 const getChatController = require("../Controllers/chat.controller");
 
-module.exports = function (io: ioResponse) {
+module.exports = function (io: IoResponse) {
   // 연결된 사람의 정보를 매개변수로 넘김
   io.on("connection", async (socket) => {
     console.log("client is connected", socket.id);

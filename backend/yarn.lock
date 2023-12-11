@@ -288,6 +288,7 @@ __metadata:
     cors: ^2.8.5
     dotenv: ^16.3.1
     express: ^4.18.2
+    http: ^0.0.1-security
     mongoose: ^8.0.1
     nodemon: ^3.0.1
     socket.io: ^4.7.2
@@ -953,6 +954,13 @@ __metadata:
     agent-base: ^7.1.0
     debug: ^4.3.4
   checksum: 48d4fac997917e15f45094852b63b62a46d0c8a4f0b9c6c23ca26d27b8df8d178bed88389e604745e748bd9a01f5023e25093722777f0593c3f052009ff438b6
+  languageName: node
+  linkType: hard
+
+"http@npm:^0.0.1-security":
+  version: 0.0.1-security
+  resolution: "http@npm:0.0.1-security"
+  checksum: c45a4e2771b5679b479b24150216e0b423d5bf2f94062c91b4b5e5347ed3f18b8c049e220df6e328c34ac5aab0d020600a05a9ea954bc7a7efc04d8dde7aada0
   languageName: node
   linkType: hard
 

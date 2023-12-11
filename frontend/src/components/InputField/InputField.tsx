@@ -1,20 +1,31 @@
-import React from "react";
+import React, { useRef, FormEvent } from "react";
 import { Input } from "@mui/base/Input";
 import { Button } from "@mui/base/Button";
 import "./InputField.css";
-const InputField = ({ message, setMessage, sendMessage }) => {
+type InputFieldProps = {
+  message: string;
+  setMessage: (value: string) => void;
+  sendMessage: (event: React.FormEvent<HTMLFormElement>) => void;
+};
+
+const InputField = ({ message, setMessage, sendMessage }: InputFieldProps) => {
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    sendMessage(event);
+    setMessage("");
+    inputRef.current?.focus();
+  };
   return (
     <div className="input-area">
       <div className="plus-button">+</div>
-      <form onSubmit={sendMessage} className="input-container">
+      <form onSubmit={handleSubmit} className="input-container">
         <Input
-          placeholder="Type in here…"
           value={message}
           onChange={(event) => setMessage(event.target.value)}
           multiline={false}
-          rows={1}
         />
-
         <Button disabled={message === ""} type="submit" className="send-button">
           전송
         </Button>

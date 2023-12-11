@@ -3,6 +3,7 @@ export interface DataResponse {
   online: boolean;
   token: string;
   _id: string;
+  __v: number;
 }
 
 export interface LoginResponse {
@@ -19,7 +20,7 @@ export interface SystemMessage {
   };
 }
 
-export interface ioResponse {
+export interface IoResponse {
   on: (arg0: string, arg1: (socket: any) => Promise<void>) => void;
   emit: (arg0: string, arg1: SystemMessage) => void;
 }

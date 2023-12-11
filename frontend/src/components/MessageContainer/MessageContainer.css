@@ -1,6 +1,9 @@
+.message-area {
+  overflow: auto;
+  height: 94%;
+}
 .system-message-container {
     display: flex;
-  
     justify-content: center;
     align-items: center;
   }
@@ -31,6 +34,9 @@
     justify-content: flex-start;
     /* margin-bottom: 5px; */
     align-items: center;
+  }
+  .user-name {
+    font-size: 12px;
   }
   .your-message {
     background-color: white;
